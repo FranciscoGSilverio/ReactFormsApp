@@ -10,7 +10,7 @@ class ListaDeNotas extends Component {
           (note, index) => {
             return (
               <li className="lista-notas_item" key={index}>
-                <CardNota />
+                <CardNota title={note.title} text={note.text}/>
               </li>
             );
           }
