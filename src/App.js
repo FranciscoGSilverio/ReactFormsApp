@@ -24,9 +24,9 @@ class App extends Component {
     this.setState(newState);
   }
 
-  addCategory(categoryValue){
-    const newCategoriesArray = [...this.state.categories, categoryValue]
-    const newState = {...this.state, categories:newCategoriesArray};
+  addCategory(categoryValue) {
+    const newCategoriesArray = [...this.state.categories, categoryValue];
+    const newState = { ...this.state, categories: newCategoriesArray };
     this.setState(newState);
   }
 
@@ -42,8 +42,8 @@ class App extends Component {
         <FormularioCadastro createNote={this.createNote.bind(this)} />
         <main className="conteudo-principal">
           <ListaDeCategorias
-            addCategory={this.addCategory.bind(this)}
             categories={this.state.categories}
+            addCategory={this.addCategory.bind(this)}
           />
           <ListaDeNotas
             notes={this.state.notes}
