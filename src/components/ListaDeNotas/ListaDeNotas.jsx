@@ -3,10 +3,28 @@ import CardNota from "../CardNota";
 import "./Style.css";
 
 class ListaDeNotas extends Component {
+  constructor() {
+    super();
+    this.state = { notes: [] };
+    this._newNotes = this._newNotes.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.notes.inscribe(this._newNotes);
+  }
+
+  componentWillUnmount(){
+    this.props.notes.uninscribe(this._newNotes)
+  }
+
+  _newNotes(notes) {
+    this.setState({ ...this.state, notes });
+  }
+
   render() {
     return (
       <ul className="lista-notas">
-        {this.props.notes.map((note, index) => {
+        {this.state.notes.map((note, index) => {
           return (
             <li className="lista-notas_item" key={index}>
               <CardNota
