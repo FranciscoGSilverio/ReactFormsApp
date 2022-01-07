@@ -14,6 +14,7 @@ class ListaDeNotas extends Component {
                 eraseNote={this.props.eraseNote}
                 title={note.title}
                 text={note.text}
+                category={note.category}
               />
             </li>
           );
